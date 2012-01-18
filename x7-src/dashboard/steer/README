@@ -1,0 +1,30 @@
+========================================
+Steer: The X7 Dashboard Project
+========================================
+
+The Steer project is a Django module that is used to provide web based
+interactions with an X7 cloud.
+
+There is a reference implementation that uses this module located at:
+
+    http://launchpad.net/steer
+
+It is highly recommended that you make use of this reference implementation
+so that changes you make can be visualized effectively and are consistent.
+Using this reference implementation as a development environment will greatly
+simplify development of the ``steer`` module.
+
+Of course, if you are developing your own Django site using Steer, then
+you can disregard this advice.
+
+
+Getting Started
+===============
+
+Steer uses the common environment configured by ``tools/install_venv.py``
+based on the dependencies listed in ``tools/pip-requires`` for local
+development.
+
+The simplest way to get going is to simply run the ``run_tests.sh`` script
+included with the Steer project. This will set up your local environment
+and run the full test suite to verify that everything is working properly.

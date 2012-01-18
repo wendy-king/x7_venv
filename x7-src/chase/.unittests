@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nosetests test/unit --exe --with-coverage --cover-package chase --cover-erase
+rm -f .coverage

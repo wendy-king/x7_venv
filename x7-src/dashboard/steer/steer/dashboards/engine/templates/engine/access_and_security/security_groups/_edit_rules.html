@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div id="security_group_rule_modal" class="{% block modal_class %}modal{% if hide %} hide {% else %} static_page{% endif %}{% endblock %}">
+    <div class="modal-header">
+      {% if hide %}<a href="#" class="close">&times;</a>{% endif %}
+      <h3>Edit Security Group Rules</h3>
+    </div>
+    <div class="modal-body clearfix">
+      <div class="right">
+          {{ table.render }}
+      </div>
+      <form id="edit_security_group_rule_form" action="{% url steer:engine:access_and_security:security_groups:edit_rules security_group.id %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+        {% include "steer/common/_form_fields.html" %}
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+      <input class="btn primary pull-right" type="submit" value="{% trans "Add Rule" %}" />
+      <a href="{% url steer:engine:access_and_security:index %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,18 @@
+{% extends "steer/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-header %}Log In{% endblock %}
+{% block modal_class %}modal{% endblock %}
+
+{% block form-action %}{% url steer:auth_login %}{% endblock %}
+
+{% block modal-body %}
+  {% include "steer/_messages.html" %}
+  <fieldset>
+    {% include "steer/common/_form_fields.html" %}
+  </fieldset>
+{% endblock %}
+
+{% block modal-footer %}
+  <input type="submit" class="btn primary pull-right" value="{% trans "Login" %}" />
+{% endblock %}

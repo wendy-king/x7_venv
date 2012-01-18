@@ -1,0 +1,29 @@
+{% load steer i18n %}
+
+<div class='sidebar'>
+  <h1 class="brand clearfix"><a href="{% url steer:user_home %}">{% trans "X7 Dashboard" %}</a></h1>
+  <div class='clearfix'>
+    <ul class="tabs">
+      {% steer_main_nav %}
+    </ul>
+  </div>
+
+  {% if request.steer.dashboard.supports_tenants %}
+  <div id="tenant_switcher" class="switcher_bar">
+    <a id="current_tenant" class="current_item" href="{% url steer:engine:overview:index %}">
+      <h4>Project</h4>
+      <h3>{{ request.user.tenant_name }}</h3>
+    </a>
+    <a class="drop_btn" href="#">&nbsp;</a>
+    <ul id="user_tenant_list" class="item_list">
+      {% for tenant in authorized_tenants %}
+        {% if tenant.enabled %}
+          <li><a href="{% url steer:auth_switch tenant.id %}">{{ tenant.name }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% steer_dashboard_nav %}
+</div>

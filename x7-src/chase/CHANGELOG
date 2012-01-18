@@ -1,0 +1,195 @@
+chase (1.4.5)
+
+    * New chase-orphans and chase-oldies command line tools to detect
+      orphaned Chase processes and long running processes.
+
+    * Command line tool "chase" now supports marker queries.
+
+    * StaticWeb middleware improved to save an extra request when
+      possible.
+
+    * Updated chase-init to support chase-object-expirer.
+
+    * Fixed object replicator timeout handling [bug 814263].
+
+    * Fixed accept header 503 vs. 400 [bug 891247].
+
+    * More exception handling for auditors.
+
+    * Doc updates for PPA [bug 905608].
+
+    * Doc updates to explain replication more clearly [bug 906976].
+
+    * Updated SAIO instructions to no longer mention ~/chase/trunk.
+
+    * Fixed docstrings in the ring code.
+
+    * PEP8 Updates.
+
+chase (1.4.4)
+
+    * Fixes to prevent socket hoarding (memory leak)
+
+    * Add sockstat info to recon.
+
+    * Fixed leak from SegmentedIterable.
+
+    * Fixed bufferedhttp to deref socks and fps.
+
+    * Add support for OS Auth API version 2.
+
+    * Make Eventlet's WSGI server log differently.
+
+    * Updated TimeoutError and except Exception refs.
+
+    * Fixed time-sensitive tests.
+
+    * Fixed object manifest etags.
+
+    * Fixes for chase-recon disk usage distribution graph.
+
+    * Adding new manpages for configuration files.
+
+    * Change bzr to chase in getting_started doc.
+
+    * Fixes the HTTPConflict import.
+
+    * Expiring Objects Support.
+
+    * Fixing bug with x-trans-id.
+
+    * Requote the source when doing a COPY.
+
+    * Add documentation for Chase Recon.
+
+    * Make drive audit regexes detect 4-letter drives.
+
+    * Adding what acc/cont/obj into the ratelimit error messages.
+
+    * Query only specific zone via chase-recon.
+
+chase (1.4.3)
+
+    * Additional quarantine catching code.
+
+    * Added client_ip to all proxy log lines not otherwise containing it.
+
+    * Content-Type is now application/xml for "GET services/bucket" chase3
+      middleware requests.
+
+    * Alpha release of the Chase Recon Experiment
+
+    * Fix last modified date for chase3 middleware.
+
+    * Fix to clear account/container metadata on account/container deletion.
+
+    * Fix for corner case regarding X-Newest.
+
+    * Fix for object auditor running out of file descriptors.
+
+    * Fix to return all proper headers for manifest objects.
+
+    * Fix to the chase tool to strip any leading slashes on file names when
+      uploading.
+
+chase (1.4.2)
+
+    * Removed stats/logging code from Chase [now in separate slogging project].
+
+    * Container Synchronization Feature - First Edition
+
+    * Fix chase3 authentication bug about the Date and X-Amz-Date handling.
+
+    * Changing ratelimiting so that it only limits PUTs/DELETEs.
+
+    * Object POSTs are implemented as COPYs now by default (you can revert to
+      previous implementation with conf object_post_as_copy = false)
+
+    * You can specify X-Newest: true on GETs and HEADs to indicate you want
+      Chase to query all backend copies and return the newest version
+      retrieved.
+
+    * Object COPY requests now always copy the newest object they can find.
+
+    * Account and container GETs and HEADs now shuffle the nodes they use to
+      balance load.
+
+    * Fixed the infinite charset: utf-8 bug
+
+    * This fixes the bug that drop_buffer_cache() doesn't work on systems where
+      off_t isn't 64 bits.
+
+chase (1.4.1)
+
+    * st renamed to chase
+
+    * swauth was separated froms chase. It is now its own project and can be
+      found at https://github.com/gholt/swauth.
+
+    * tempauth middleware added as an extremely limited auth system for dev
+      work.
+
+    * Account and container listings now properly labeled UTF-8 (previously the
+      label was "utf8").
+
+    * Accounts are auto-created if an auth token is valid when the
+      account_autocreate proxy config parameter is set to true.
+
+chase (1.4.0)
+
+    * chase-bench now cleans up containers it creates.
+
+    * WSGI servers now load WSGI filters and applications after forking for
+      better plugin support.
+
+    * swauth-cleanup-tokens now handles 404s on token containers and tokens
+      better.
+
+    * Proxy logs the remote IP address as the client IP in the absence of
+      X-Forwarded-For and X-Cluster-Client-IP headers instead of - like it did
+      before.
+
+    * Chase3 WSGI middleware added support for param-signed URLs.
+
+    * swauth- scripts now exit with proper exit codes.
+
+    * Fixed a bug where allowed_headers weren't honored for HEAD requests.
+
+    * Double quarantining of corrupted sqlite3 databases now works.
+
+    * Fix for Object replicator breaking when running object replicator with no
+      objects on the server.
+
+    * Added the Accept-Ranges header to GET and HEAD requests.
+
+    * When a single object has multiple async pending updates on a single
+      device, only latest async pending is now sent.
+
+    * Fixed issue of Chase3 WSGI middleware not working correctly with '/' in
+      object names.
+
+    * Renamed chase-stats-* to chase-dispersion-* to avoid confusion with log
+      stats stuff.
+
+    * Added X-Trans-Id transaction id header to every response.
+
+    * Fixed a Python 2.7 compatibility problem.
+
+    * Now using bracketed notation for ip literals in rsync calls, so
+      compressed ipv6 literals work.
+
+    * Added a container stats collector and refactoring some of the stats code.
+
+    * Changed subdir nodes in XML formatted object listings to align with
+      object nodes. Now: <subdir name="foo"><name>foo</name></subdir> Before:
+      <subdir name="foo" />.
+
+    * Fixed bug in Swauth to support for multiple swauth instances.
+
+    * chase-ring-builder: Added list_parts command which shows common
+      partitions for a given list of devices.
+
+    * Object auditor now shows better statistics updates in the logs.
+
+    * Stats uploaders now allow overrides for source_filename_pattern and
+      new_log_cutoff values.

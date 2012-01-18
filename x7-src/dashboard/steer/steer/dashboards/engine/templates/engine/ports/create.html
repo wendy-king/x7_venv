@@ -1,0 +1,13 @@
+{% extends 'engine/base.html' %}
+{% load i18n %}
+{% block title %}Create Port{% endblock %}
+
+{% block page_header %}
+  {# to make searchable false, just remove it from the include statement #}
+  {% include "steer/common/_page_header.html" with title=_("Create Network") %}
+{% endblock page_header %}
+
+{% block dash_main %}
+    {% include 'engine/ports/_create.html' with form=create_form %}
+{% endblock %}
+

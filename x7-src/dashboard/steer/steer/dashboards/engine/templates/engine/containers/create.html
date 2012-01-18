@@ -1,0 +1,15 @@
+{% extends 'engine/base.html' %}
+{% load i18n %}
+{% block title %}Create Container{% endblock %}
+
+{% block page_header %}
+  {% include "steer/common/_page_header.html" with title=_("Create Container") %}
+{% endblock page_header %}
+
+{% block dash_main %}
+  {% include "engine/containers/_create.html" with form=create_form %}
+{% endblock %}
+
+
+
+

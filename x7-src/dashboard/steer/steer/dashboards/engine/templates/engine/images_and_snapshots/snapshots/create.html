@@ -1,0 +1,13 @@
+{% extends 'engine/base.html' %}
+{% load i18n %}
+{% block title %}Create Snapshot{% endblock %}
+
+{% block page_header %}
+  {% include "steer/common/_page_header.html" with title=_("Create a Snapshot") %}
+{% endblock page_header %}
+
+{% block dash_main %}
+    {% include 'engine/images_and_snapshots/snapshots/_create.html' with form=create_form %}
+{% endblock %}
+
+

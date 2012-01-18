@@ -1,0 +1,24 @@
+{% extends "steer/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block form_id %}{% endblock %}
+{% block form_action %}{% url steer:syspanel:tenants:update tenant.id %}{% endblock %}
+
+{% block modal-header %}{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+    {% include "steer/common/_form_fields.html" %}
+    </fieldset>
+</div>
+<div class="right">
+    <h3>{% trans "Description" %}:</h3>
+    <p>{% trans "From here you can edit a tenant." %}</p>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <input class="btn primary pull-right" type="submit" value="{% trans "Update Tenant" %}" />
+  <a href="{% url steer:syspanel:tenants:index %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

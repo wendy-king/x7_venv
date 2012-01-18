@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<services xmlns="http://docs.x7.org/identity/api/ext/OS-KSADM/v1.0">
+  <service id="123" name="engine" type="compute" description="X7 Compute Service" />
+  <service id="234" name="tank" type="image" description="X7 Image Service" />
+</services>

@@ -1,0 +1,11 @@
+{% extends 'engine/base.html' %}
+{% load i18n %}
+{% block title %}Attach Volume{% endblock %}
+
+{% block page_header %}
+  {% include "steer/common/_page_header.html" with title=_("Attach a Volume") %}
+{% endblock page_header %}
+
+{% block dash_main %}
+    {% include 'engine/instances_and_volumes/volumes/_attach.html' with form=attach_form %}
+{% endblock %}

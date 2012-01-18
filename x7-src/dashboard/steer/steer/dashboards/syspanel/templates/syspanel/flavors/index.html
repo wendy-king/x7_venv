@@ -1,0 +1,14 @@
+{% extends 'syspanel/base.html' %}
+{% load i18n %}
+{% block title %}Flavors{% endblock %}
+
+{% block page_header %}
+  {% url steer:syspanel:flavors:index as refresh_link %}
+  {# to make searchable false, just remove it from the include statement #}
+  {% include "steer/common/_page_header.html" with title=_("Flavors") refresh_link=refresh_link searchable="true" %}
+{% endblock page_header %}
+
+{% block syspanel_main %}
+  {% include "syspanel/flavors/_list.html" %}
+  <a id="flavor_create_link" class="btn small" href="{% url steer:syspanel:flavors:create %}">{% trans "Create New Flavor" %}</a>
+{% endblock %}

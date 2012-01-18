@@ -1,0 +1,17 @@
+Chase
+-----
+
+A distributed object store that was originally developed as the basis for 
+Rackspace's Cloud Files.
+
+To build documentation run `python setup.py build_sphinx`, and then browse to
+/doc/build/html/index.html.
+
+The best place to get started is the "SAIO - Chase All In One", which will walk
+you through setting up a development cluster of Chase in a VM.
+
+For more information, visit us at http://launchpad.net/chase, or come hang out
+on our IRC channel, #x7 on freenode.
+
+--
+Chase Development Team

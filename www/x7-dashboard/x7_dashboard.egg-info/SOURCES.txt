@@ -1,0 +1,8 @@
+README
+setup.py
+x7_dashboard.egg-info/PKG-INFO
+x7_dashboard.egg-info/SOURCES.txt
+x7_dashboard.egg-info/dependency_links.txt
+x7_dashboard.egg-info/not-zip-safe
+x7_dashboard.egg-info/requires.txt
+x7_dashboard.egg-info/top_level.txt
